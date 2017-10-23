@@ -1,6 +1,3 @@
-<?php 
-require_once "config.php";
- ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,11 +11,11 @@ require_once "config.php";
 		<a href="./login.php">
 			<img  class="imagem"  src="./img/login.png" alt="logo" height="20px" width="80px">
 		</a>
-		<form name="login" action="confirmar_login.php" method="request">
+		<form name="login" action="confirmar_login.php" method="post">
 			<label id="l1">Email:</label><br>
 			<input type="email" name="email" id="email"><br><br>
 			<label id="l1">Senha:</label><br>
-			<input type="password" name="senha" id="senha"><br><br>
+			<input type="password" name="senha"><br><br>
 			<input type="checkbox" value="Lembrar"> <label id="l1">Lembrar</label>
 			<br><br>
 			<input type="submit" class="bt" value="Entrar">

@@ -35,4 +35,24 @@
 		}
 	}
 
-	 ?>
+ ?>
+
+<?php 
+
+include 'config.php';
+
+$email = $_GET['email'];
+$senha = $_GET['senha'];
+
+$confirmacao = "SELECT * FROM T_USUARIO WHERE email = '$email' AND senha = '$senha'";
+$existe = 0;
+foreach ($conexao->query($confirmacao) as $row) {
+	if ($row['email'] == $email && $row['senha'] == $senha) {
+		setcookie("email", $email);
+		setcookie("senha", $senha);
+		echo "Usuário logado.";
+	}else{
+		echo "Login ou senha inválidos. <a href=javascript:history.go(-1)>Clique aqui para voltar.</a>";
+	}
+}
+?>
