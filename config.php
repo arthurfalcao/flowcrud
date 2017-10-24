@@ -11,4 +11,6 @@ try {
 	echo "Erro na conexão: " . $erro->getMessage();
 }
 
+require_once 'funcoes.php';
+
  ?>

@@ -1,5 +1,11 @@
 <?php 
 require_once "config.php";
+
+session_start();
+
+if (isLoggedIn()) {
+	header('Location: painel.php');
+}
  ?>
 
 <!DOCTYPE html>
