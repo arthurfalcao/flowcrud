@@ -1,5 +1,11 @@
 <?php 
-require_once "config.php"
+require_once "config.php";
+
+session_start();
+
+if (isLoggedIn()) {
+	header('Location: painel.php');
+}
  ?>
 
 <!DOCTYPE html>
@@ -24,6 +30,7 @@ Cidade:	<input type="text" name="cidade" id="cidade" class="txt">
 UF: 	<input type="text" name="uf" id="uf" class="txt">
 			</pre>
 			<input type="submit" value="Cadastrar" class="bt">
+			<input type="button" value="Voltar" class="bt" onclick="history.go(-1)">
 		</form>
 		<p>Já possui conta?</p>
 		<a href="login.php">Entre</a><br><br>

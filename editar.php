@@ -1,8 +1,15 @@
 <?php 
 
-include 'config.php';
+require_once 'config.php';
+require_once 'check.php';
 
 session_start();
+
+$nome = isset($_POST['nome']) ? $_POST['nome'] : null;
+$email = isset($_POST['email']) ? $_POST['email'] : null;
+$senha = isset($_POST['senha']) ? $_POST['senha'] : null;
+$cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null;
+$uf = isset($_POST['uf']) ? $_POST['uf'] : null;
 
 $id = $_SESSION['user_id'];
 
@@ -39,31 +46,28 @@ if (!is_array($usuario)) {
  
         <h2>Edição de Usuário</h2>
          
-        <form action="confirmar_editar.php" method="request">
-            <label for="name">Nome: </label>
+        <form action="confirmar_editar.php" method="post">
+            <label for="nome">Nome: </label>
             <br>
             <input type="text" name="nome" id="nome" value="<?php echo $nome ?>">
  
             <br><br>
- 
-            <label for="email">Email: </label>
-            <br>
-            <input type="text" name="email" id="email" value="<?php echo $user['email'] ?>">
- 
-            <br><br>
              
-            Gênero:
+            <label for="senha">Senha: </label>
             <br>
-            <input type="radio" name="gender" id="gener_m" value="m" <?php if ($user['gender'] == 'm'): ?> checked="checked" <?php endif; ?>>
-            <label for="gener_m">Masculino </label>
-            <input type="radio" name="gender" id="gener_f" value="f" <?php if ($user['gender'] == 'f'): ?> checked="checked" <?php endif; ?>>
-            <label for="gener_f">Feminino </label>
+            <input type="password" name="senha" id="senha" value="<?php echo $senha ?>">
              
             <br><br>
  
-            <label for="birthdate">Data de Nascimento: </label>
+            <label for="cidade">Cidade: </label>
             <br>
-            <input type="text" name="birthdate" id="birthdate" placeholder="dd/mm/YYYY" value="<?php echo dateConvert($user['birthdate']) ?>">
+            <input type="text" name="cidade" id="cidade" value="<?php echo $cidade ?>">
+ 
+            <br><br>
+
+            <label for="cidade">UF: </label>
+            <br>
+            <input type="text" name="uf" id="uf" value="<?php echo $uf ?>">
  
             <br><br>
  

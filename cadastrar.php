@@ -8,7 +8,28 @@ $senha = $_GET['senha'];
 $cidade = $_GET['cidade'];
 $uf = $_GET['uf'];
 
- 		
+/* Otimização em andamento
+if (empty($nome) || empty($email) || empty($senha) || empty($cidade) || empty($uf)){
+    echo "Volte e preencha todos os campos";
+    exit;
+}
+
+$SQL = "INSERT INTO T_USUARIO (id, nome, email, senha, cidade, uf) VALUES (DEFAULT, ?, ?, ?, ?, ?)";
+$stmt = $conexao->prepare($SQL);
+$stmt->bindParam(1, $nome);
+$stmt->bindParam(2, $email);
+$stmt->bindParam(3, $senha);
+$stmt->bindParam(4, $cidade);
+$stmt->bindParam(5, $uf);
+
+if($stmt->execute()){
+    echo "<script>alert('Usuário cadastrado com sucesso.');</script>";
+    echo "<script language=\"javascript\">window.location=\"login.php\";</script>"; 
+}else{
+    echo "Erro ao cadastrar";
+    print_r($stmt->erroInfo());
+}
+*/ 		
 if(empty($nome)){
 	echo "<script>alert('Preencha todos os campos para se cadastrar!'); history.back();</script>";
 }elseif(empty($email)){
@@ -34,5 +55,4 @@ if(empty($nome)){
         echo "<script language=\"javascript\">window.location=\"login.php\";</script>";
     }       	
 }
-
  ?>

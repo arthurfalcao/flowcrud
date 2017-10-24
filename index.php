@@ -20,7 +20,7 @@ require 'config.php';
         <?php if (isLoggedIn()): ?>
             <p>Olá, <?php echo $_SESSION['user_name']; ?>. <a href="painel.php">Painel</a> | <a href="logout.php">Sair</a></p>
         <?php else: ?>
-            <p>Olá, visitante. <a href="login.php">Login</a></p>
+            <p>Olá, visitante. <a href="login.php">Entre</a> ou <a href="cadastro.php">Cadastre-se</a></p>
         <?php endif; ?>
  
     </body>

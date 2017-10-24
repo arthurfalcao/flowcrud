@@ -9,17 +9,24 @@ $email = isset($_POST['email']) ? $_POST['email'] : null;
 $senha = isset($_POST['senha']) ? $_POST['senha'] : null;
 $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null;
 $uf = isset($_POST['uf']) ? $_POST['uf'] : null;
+
+$id = $_SESSION['user_id'];
+
+if (empty($nome) || empty($senha) || empty($cidade) || empty($uf)){
+    echo "Volte e preencha todos os campos";
+    exit;
+}
 	
-$SQL = "UPDATE T_USUARIO SET name = ?, email = ?, senha = ?, cidade = ?, uf = ? WHERE id = ?"
+$SQL = "UPDATE T_USUARIO SET nome = ?, senha = ?, cidade = ?, uf = ? WHERE id = ?";
 $stmt = $conexao->prepare($SQL);
 $stmt->bindParam(1, $nome);
-$stmt->bindParam(2, $email);
-$stmt->bindParam(3, $senha);
-$stmt->bindParam(4, $cidade);
-$stmt->bindParam(5, $uf);
-$stmt->bindParam(6, $id);
+$stmt->bindParam(2, $senha);
+$stmt->bindParam(3, $cidade);
+$stmt->bindParam(4, $uf);
+$stmt->bindParam(5, $id);
 
 if($stmt->execute()){
+	$_SESSION['user_name'] = $nome;
 	header('Location: painel.php');
 }else{
 	echo "Erro ao alterar";

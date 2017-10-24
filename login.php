@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "config.php";
 
 session_start();
@@ -21,14 +21,13 @@ if (isLoggedIn()) {
 			<img  class="imagem"  src="./img/login.png" alt="logo" height="20px" width="80px">
 		</a>
 		<form name="login" action="confirmar_login.php" method="request">
-			<label id="l1">Email:</label><br>
-			<input type="email" name="email" id="email"><br><br>
-			<label id="l1">Senha:</label><br>
-			<input type="password" name="senha" id="senha"><br><br>
-			<input type="checkbox" value="Lembrar"> <label id="l1">Lembrar</label>
+			<label for="inputEmail" class="sr-only" id="l1">Email</label><br>
+			<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br><br>
+			<label for="inputSenha" id="l1" class="sr-only">Senha</label><br>
+			<input type="password" name="senha" id="inputSenha" class="form-control" placeholder="Senha" required><br><br>
+			<input type="checkbox" value="Lembrar"> <label id="l1">Lembre me</label>
 			<br><br>
-			<input type="submit" class="bt" value="Entrar">
-			<input type="reset" class="bt" value="Cancelar">
+			<button class="btn btn-lg btn-primary btn-block" type="submit" class="bt"> Entrar</button>
 		</form>
 		<p>Não possui conta?</p>
 		<a style="text-decoration: none; color: black; " href="cadastro.php">Cadastre-se</a><br><br>
