@@ -12,7 +12,7 @@ if (isLoggedIn()) {
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<title>Cadastro</title>
+	<title>Cadastro - Flow</title>
 	<link rel="stylesheet" type="text/css" href="./css/cadastro2.css">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">

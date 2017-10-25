@@ -35,7 +35,7 @@ if (!is_array($usuario)) {
 <html>
 <head>
     <meta charset="utf-8">
-    <title><?php echo $_SESSION['user_name']; ?> - Editar</title>
+    <title><?php echo $_SESSION['user_name']; ?> - Editar - Flow</title>
     <link rel="stylesheet" type="text/css" href="./css/estilo.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/editar.css">

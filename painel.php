@@ -9,7 +9,7 @@ require 'check.php';
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $_SESSION['user_name']; ?> - Perfil</title>
+	<title><?php echo $_SESSION['user_name']; ?> - Perfil - Flow</title>
 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

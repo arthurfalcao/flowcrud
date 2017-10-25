@@ -12,7 +12,7 @@ if (isLoggedIn()) {
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<title>Login</title>
+	<title>Login - Flow</title>
 	<link rel="stylesheet" type="text/css" href="css/login2.css">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">

@@ -8,7 +8,7 @@ require 'config.php';
 <html>
 <head>
     <meta charset="utf-8">
-    <title>CRUD</title>
+    <title>Flow</title>
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/estilo.css">
 </head>
