@@ -29,8 +29,11 @@ session_start();
 $_SESSION['logged_in'] = true;
 $_SESSION['user_id'] = $user['id'];
 $_SESSION['user_name'] = $user['nome'];
+$_SESSION['user_email'] = $user['email'];
+$_SESSION['user_cidade'] = $user['cidade'];
+$_SESSION['user_uf'] = $user['uf'];
 
 echo "<script>alert('Usuário logado com sucesso');</script>";
-echo "<script language=\"javascript\">window.location=\"painel.php\";</script>";
+echo "<script language=\"javascript\">window.location=\"index.php\";</script>";
 
  ?>

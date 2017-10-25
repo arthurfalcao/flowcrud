@@ -27,6 +27,8 @@ $stmt->bindParam(5, $id);
 
 if($stmt->execute()){
 	$_SESSION['user_name'] = $nome;
+	$_SESSION['user_cidade'] = $cidade;
+	$_SESSION['user_uf'] = $uf;
 	header('Location: painel.php');
 }else{
 	echo "Erro ao alterar";

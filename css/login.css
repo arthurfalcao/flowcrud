@@ -1,13 +1,9 @@
-@charset "UTF-8";
-
 body{
 	background-color: #eeeeee;
 }
 
 div#login{
 	text-align: center;
-	border: solid;
-	border-radius: 10px;
 	margin: 50px;
 }
 
@@ -85,8 +81,3 @@ label{
 }
 
 /* Copyright */
-
-footer#rodape{
-    clear: both;
-    text-align: center;
-}

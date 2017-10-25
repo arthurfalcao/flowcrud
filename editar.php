@@ -1,9 +1,7 @@
 <?php 
-
+session_start();
 require_once 'config.php';
 require_once 'check.php';
-
-session_start();
 
 $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
 $email = isset($_POST['email']) ? $_POST['email'] : null;
@@ -12,6 +10,7 @@ $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null;
 $uf = isset($_POST['uf']) ? $_POST['uf'] : null;
 
 $id = $_SESSION['user_id'];
+$nome = $_SESSION['user_name'];
 
 if (empty($id)){
 	echo "ID não encontrado";
@@ -34,47 +33,32 @@ if (!is_array($usuario)) {
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
- 
-        <title>Edição de Usuário</title>
-    </head>
- 
-    <body>
- 
-        <h1>Sistema de Cadastro</h1>
- 
-        <h2>Edição de Usuário</h2>
-         
-        <form action="confirmar_editar.php" method="post">
-            <label for="nome">Nome: </label>
-            <br>
-            <input type="text" name="nome" id="nome" value="<?php echo $nome ?>">
- 
-            <br><br>
-             
-            <label for="senha">Senha: </label>
-            <br>
-            <input type="password" name="senha" id="senha" value="<?php echo $senha ?>">
-             
-            <br><br>
- 
-            <label for="cidade">Cidade: </label>
-            <br>
-            <input type="text" name="cidade" id="cidade" value="<?php echo $cidade ?>">
- 
-            <br><br>
-
-            <label for="cidade">UF: </label>
-            <br>
-            <input type="text" name="uf" id="uf" value="<?php echo $uf ?>">
- 
-            <br><br>
- 
-            <input type="hidden" name="id" value="<?php echo $id ?>">
- 
-            <input type="submit" value="Alterar">
+<head>
+    <meta charset="utf-8">
+    <title><?php echo $_SESSION['user_name']; ?> - Editar</title>
+    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/editar.css">
+</head>
+<body background="./img/2144.jpg">
+    <?php include("includes/navbar.html");?>
+    <div id="editar">
+        <form class="cadastro" action="confirmar_editar.php" method="post">
+            <input type="hidden" name="id">
+                <label for="inputNome" class="sr-only">Nome</label><br>
+                <input type="nome" name="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+                <label for="inputEmail" class="sr-only">Email</label><br>
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
+                <label for="inputSenha" class="sr-only">Senha</label><br>
+                <input type="password" name="senha" id="inputSenha" class="form-control" placeholder="Senha" required>
+                <label for="inputCidade" class="sr-only">Cidade</label><br>
+                <input type="text" name="cidade" id="inputCidade" class="form-control" placeholder="Cidade" required>
+                <label for="inputUF" class="sr-only">UF</label><br>
+                <input type="text" name="uf" id="inputUF" class="form-control" placeholder="UF" required>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Alterar</button>
         </form>
- 
-    </body>
+    </div>
+    <?php include("includes/footer.html");?>
+</body>
 </html>

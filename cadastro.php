@@ -13,30 +13,34 @@ if (isLoggedIn()) {
 <head>
 	<meta charset="utf-8">
 	<title>Cadastro</title>
-	<link rel="stylesheet" type="text/css" href="css/cadastro.css">
+	<link rel="stylesheet" type="text/css" href="./css/cadastro2.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
 </head>
-<body>
+<body background="./img/2144.jpg">
+	<?php include("includes/navbar2.html");?>
 	<div id="cadastro">
 		<a href="./cadastro.php">
 			<img  class="imagem"  src="./img/registro.png" alt="logo" height="20px" width="80px">
 		</a>
 		<form name="cadastro" method="request" action="cadastrar.php">
 			<input type="hidden" name="id">
-			<pre id="txt">
-Nome:	<input type="text" name="nome" id="nome" class="txt">
-Email:	<input type="email" name="email" id="email" class="txt">
-Senha:	<input type="password" name="senha" id="senha" class="txt">
-Cidade:	<input type="text" name="cidade" id="cidade" class="txt">
-UF: 	<input type="text" name="uf" id="uf" class="txt">
-			</pre>
-			<input type="submit" value="Cadastrar" class="bt">
-			<input type="button" value="Voltar" class="bt" onclick="history.go(-1)">
+			<label for="inputNome" class="sr-only">Nome</label><br>
+			<input type="nome" name="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+			<label for="inputEmail" class="sr-only">Email</label><br>
+			<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
+			<label for="inputSenha" class="sr-only">Senha</label><br>
+			<input type="password" name="senha" id="inputSenha" class="form-control" placeholder="Senha" required>
+			<label for="inputCidade" class="sr-only">Cidade</label><br>
+			<input type="text" name="cidade" id="inputCidade" class="form-control" placeholder="Cidade" required>
+			<label for="inputUF" class="sr-only">UF</label><br>
+			<input type="text" name="uf" id="inputUF" class="form-control" placeholder="UF" required>
+			<br>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Cadastrar</button>
 		</form>
-		<p>Já possui conta?</p>
-		<a href="login.php">Entre</a><br><br>
+		<br>
+		<p>Já possui conta? <a href="login.php">Entre</a><br><br></p>
 		</div>
-	<footer>
-		<p> Copyright &copy 2017</p>
-	</footer>
+	<?php include("includes/footer.html");?>
 </body>
 </html>
