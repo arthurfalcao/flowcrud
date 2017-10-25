@@ -39,10 +39,12 @@ if (!is_array($usuario)) {
     <link rel="stylesheet" type="text/css" href="./css/estilo.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/editar.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body background="./img/2144.jpg">
     <?php include("includes/navbar.html");?>
     <div id="editar">
+    <h1 id="fontes">Editar</h1>
         <form class="cadastro" action="confirmar_editar.php" method="post">
             <input type="hidden" name="id">
                 <label for="inputNome" class="sr-only">Nome</label><br>

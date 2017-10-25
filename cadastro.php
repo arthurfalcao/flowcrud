@@ -16,13 +16,12 @@ if (isLoggedIn()) {
 	<link rel="stylesheet" type="text/css" href="./css/cadastro2.css">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body background="./img/2144.jpg">
 	<?php include("includes/navbar2.html");?>
 	<div id="cadastro">
-		<a href="./cadastro.php">
-			<img  class="imagem"  src="./img/registro.png" alt="logo" height="20px" width="80px">
-		</a>
+		<h1 id="fontes">Cadastro</h1>
 		<form name="cadastro" method="request" action="cadastrar.php">
 			<input type="hidden" name="id">
 			<label for="inputNome" class="sr-only">Nome</label><br>
@@ -38,7 +37,6 @@ if (isLoggedIn()) {
 			<br>
 			<button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Cadastrar</button>
 		</form>
-		<br>
 		<p>Já possui conta? <a href="login.php">Entre</a><br><br></p>
 		</div>
 	<?php include("includes/footer.html");?>

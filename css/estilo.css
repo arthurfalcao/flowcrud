@@ -14,8 +14,7 @@
 	text-align: center;
     margin-right: 30%;
     margin-left: 30%;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    border-radius: 10px;
+    background-color: transparent;
 }
 
 .span6{
@@ -34,4 +33,14 @@ body{
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border-radius: 10px;
     padding: 0px;
+}
+
+#fontes{
+    font-family: 'Lobster', cursive;
+    font-size: 90px;
+    color: #337ab7;
+}
+
+h2#fontes{
+    font-size: 70px;
 }
