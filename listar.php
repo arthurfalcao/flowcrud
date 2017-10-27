@@ -47,8 +47,7 @@ $stmt->execute();
                         <td><?php echo $user['cidade'] ?></td>
                         <td><?php echo $user['uf'] ?></td>
                         <td class="actions">
-                            <a class="btn btn-success btn-xs" href="cadastro.php"p>Cadastrar</a>
-                            <a class="btn btn-warning btn-xs" href="editar_total.php?id=<?php echo $user['id'] ?>">Editar</a>
+                            <a class="btn btn-warning btn-xs" href="editar.php?id=<?php echo $user['id'] ?>">Editar</a>
                             <a class="btn btn-danger btn-xs"  href="deletar.php?id=<?php echo $user['id'] ?>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                         </td>
                     </tr>

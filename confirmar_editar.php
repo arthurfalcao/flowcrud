@@ -10,7 +10,11 @@ $senha = isset($_POST['senha']) ? $_POST['senha'] : null;
 $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null;
 $uf = isset($_POST['uf']) ? $_POST['uf'] : null;
 
-$id = $_SESSION['user_id'];
+if (isLoggedIn()) {
+	$id = $_SESSION['user_id'];
+}else{
+	$id = isset($_POST['id']) ? $_POST['id'] : null;
+}
 
 if (empty($nome) || empty($senha) || empty($cidade) || empty($uf)){
     echo "Volte e preencha todos os campos";
@@ -26,10 +30,14 @@ $stmt->bindParam(4, $uf);
 $stmt->bindParam(5, $id);
 
 if($stmt->execute()){
-	$_SESSION['user_name'] = $nome;
-	$_SESSION['user_cidade'] = $cidade;
-	$_SESSION['user_uf'] = $uf;
-	header('Location: painel.php');
+	if (isLoggedIn()) {
+		$_SESSION['user_name'] = $nome;
+		$_SESSION['user_cidade'] = $cidade;
+		$_SESSION['user_uf'] = $uf;
+		header('Location: painel.php');	
+	}else{
+		header('Location: listar.php');
+	}
 }else{
 	echo "Erro ao alterar";
 	print_r($stmt->errorInfo());

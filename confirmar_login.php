@@ -6,7 +6,7 @@ $email = isset($_GET['email']) ? $_GET['email'] : '';
 $senha = isset($_GET['senha']) ? $_GET['senha'] : '';
 
 if (empty($email) || empty($senha)) {
-	echo "Email ou senha inválidos";
+	echo "<script>alert('Email ou senha incorretos'); history.back();</script>";
 	exit;
 }
 

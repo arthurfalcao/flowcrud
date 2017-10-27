@@ -8,7 +8,6 @@ $senha = $_GET['senha'];
 $cidade = $_GET['cidade'];
 $uf = $_GET['uf'];
 
-/* Otimização em andamento
 if (empty($nome) || empty($email) || empty($senha) || empty($cidade) || empty($uf)){
     echo "Volte e preencha todos os campos";
     exit;
@@ -29,7 +28,7 @@ if($stmt->execute()){
     echo "Erro ao cadastrar";
     print_r($stmt->erroInfo());
 }
-*/ 		
+/* 		
 if(empty($nome)){
 	echo "<script>alert('Preencha todos os campos para se cadastrar!'); history.back();</script>";
 }elseif(empty($email)){
@@ -55,4 +54,5 @@ if(empty($nome)){
         echo "<script language=\"javascript\">window.location=\"login.php\";</script>";
     }       	
 }
+*/
  ?>
