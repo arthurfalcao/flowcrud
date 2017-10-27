@@ -22,7 +22,7 @@ if (isLoggedIn()) {
 	<?php include("includes/navbar2.html");?>
 	<div id="cadastro">
 		<h1 id="fontes">Cadastro</h1>
-		<form name="cadastro" method="request" action="confirmar_cadastrar.php">
+		<form name="cadastro" method="request" action="confirmar_cadastro.php">
 			<input type="hidden" name="id">
 			<label for="inputNome" class="sr-only">Nome</label><br>
 			<input type="nome" name="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
