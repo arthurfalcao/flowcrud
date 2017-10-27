@@ -44,3 +44,19 @@ body{
 h2#fontes{
     font-size: 70px;
 }
+
+tbody{
+    background-color: white;
+}
+
+#tabela{
+    font-family: 'Lobster', cursive;
+    color: #337ab7;
+}
+
+p#else{
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    color: #337ab7;
+    text-align: center;
+}

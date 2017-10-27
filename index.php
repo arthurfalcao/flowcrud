@@ -15,7 +15,6 @@ require 'config.php';
 </head>
 <body background="./img/2144.jpg">
     <?php include("includes/navbar.php");?>
-
     <div class="jumbotron">
         <?php if (isLoggedIn()): ?>
             <h2 id="fontes">Olá, <?php echo $_SESSION['user_name']; ?>!</a></h2><br>

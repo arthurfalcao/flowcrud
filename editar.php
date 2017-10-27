@@ -3,12 +3,6 @@ session_start();
 require_once 'config.php';
 require_once 'check.php';
 
-$nome = isset($_POST['nome']) ? $_POST['nome'] : null;
-$email = isset($_POST['email']) ? $_POST['email'] : null;
-$senha = isset($_POST['senha']) ? $_POST['senha'] : null;
-$cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null;
-$uf = isset($_POST['uf']) ? $_POST['uf'] : null;
-
 $id = $_SESSION['user_id'];
 $nome = $_SESSION['user_name'];
 

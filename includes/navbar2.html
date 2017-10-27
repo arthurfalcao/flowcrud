@@ -13,6 +13,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="login.php">Login<span class="sr-only">(current)</span></a></li>
         <li><a href="cadastro.php">Cadastro</a></li>
+        <li><a href="listar.php">Usuários</a></li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">

@@ -4,8 +4,12 @@ require_once 'config.php';
 require_once 'check.php';
 
 session_start();
+if (isLoggedIn()) {
+	$id = $_SESSION['user_id'];	
+}else{
+	$id = isset($_GET['id']) ? (int) $_GET['id'] : null;
+}
 
-$id = $_SESSION['user_id'];
 
 if (empty($id)){
 	echo "ID não encontrado";
