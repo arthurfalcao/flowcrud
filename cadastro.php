@@ -33,7 +33,7 @@ if (isLoggedIn()) {
 			<label for="inputCidade" class="sr-only">Cidade</label><br>
 			<input type="text" name="cidade" id="inputCidade" class="form-control" placeholder="Cidade" required>
 			<label for="inputUF" class="sr-only">UF</label><br>
-			<input type="text" name="uf" id="inputUF" class="form-control" placeholder="UF" required>
+			<input type="text" name="uf" id="inputUF" class="form-control" placeholder="UF" maxlength="2" size="2" style='text-transform:uppercase' required>
 			<br>
 			<button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Cadastrar</button>
 		</form>
