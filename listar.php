@@ -1,6 +1,10 @@
 <?php 
 require_once 'config.php';
 session_start();
+if (isLoggedIn()) {
+    header('Location: painel.php');
+}
+
 
 $SQL_total = "SELECT COUNT(*) AS TOTAL FROM T_USUARIO ORDER BY id ASC";
 $SQL = "SELECT id, nome, email, cidade, uf FROM T_USUARIO ORDER BY id ASC";
