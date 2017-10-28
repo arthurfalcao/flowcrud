@@ -1,15 +1,12 @@
 <?php 
-session_start();
 require_once 'config.php';
-
+session_start();
 if (isLoggedIn()) {
     $id = $_SESSION['user_id'];
     $nome = $_SESSION['user_name'];    
 }else{
     $id = isset($_GET['id']) ? (int) $_GET['id'] : null;
 }
-
-
 if (empty($id)){
 	echo "ID não encontrado";
 	exit;
@@ -54,7 +51,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             <label for="inputCidade" class="sr-only">Cidade</label><br>
             <input type="text" name="cidade" id="inputCidade" class="form-control" placeholder="Cidade" required>
             <label for="inputUF" class="sr-only">UF</label><br>
-            <input type="text" name="uf" id="inputUF" class="form-control" placeholder="UF" required>
+            <input type="text" name="uf" id="inputUF" class="form-control" placeholder="UF" maxlength="2" size="2" style='text-transform:uppercase' required>
             <br>
             <button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Alterar</button>
         </form>

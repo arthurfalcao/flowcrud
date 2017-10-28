@@ -1,8 +1,6 @@
 <?php 
 require_once "config.php";
-
 session_start();
-
 if (isLoggedIn()) {
 	header('Location: painel.php');
 }
@@ -19,10 +17,10 @@ if (isLoggedIn()) {
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body background="./img/2144.jpg">
-	<?php include("includes/navbar2.html");?>
+	<?php include("includes/navbar.php");?>
 	<div id="cadastro">
 		<h1 id="fontes">Cadastro</h1>
-		<form name="cadastro" method="request" action="confirmar_cadastrar.php">
+		<form name="cadastro" method="post" action="confirmar_cadastro.php">
 			<input type="hidden" name="id">
 			<label for="inputNome" class="sr-only">Nome</label><br>
 			<input type="nome" name="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
@@ -37,6 +35,7 @@ if (isLoggedIn()) {
 			<br>
 			<button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Cadastrar</button>
 		</form>
+		<p></p>
 		<p>Já possui conta? <a href="login.php">Entre</a><br><br></p>
 		</div>
 	<?php include("includes/footer.html");?>

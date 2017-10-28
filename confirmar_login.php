@@ -1,9 +1,7 @@
 <?php 
-
 include 'config.php';
-
-$email = isset($_GET['email']) ? $_GET['email'] : '';
-$senha = isset($_GET['senha']) ? $_GET['senha'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$senha = isset($_POST['senha']) ? md5($_POST['senha']) : '';
 
 if (empty($email) || empty($senha)) {
 	echo "<script>alert('Email ou senha incorretos'); history.back();</script>";

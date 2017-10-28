@@ -1,8 +1,5 @@
 <?php 
-
 require_once 'config.php';
-require_once 'check.php';
-
 session_start();
 
 if (isLoggedIn()) {

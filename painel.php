@@ -1,7 +1,6 @@
 <?php 
 session_start();
 require 'check.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,7 @@ require 'check.php';
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body background="./img/2144.jpg">
-	<?php include("includes/navbar.html");?>
+	<?php include("includes/navbar.php");?>
 	<dir class="perfil">
 		<div class="container-fluid well span6">
 			<div class="row-fluid">
