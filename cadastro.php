@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "config.php";
 session_start();
 if (isLoggedIn()) {
@@ -11,13 +11,13 @@ if (isLoggedIn()) {
 <head>
 	<meta charset="utf-8">
 	<title>Cadastro - Flow</title>
-	<link rel="stylesheet" type="text/css" href="./css/cadastro2.css">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="./_INC/css/cadastro2.css">
+	<link rel="stylesheet" type="text/css" href="./_INC/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
-<body background="./img/2144.jpg">
-	<?php include("includes/navbar.php");?>
+<body background="./_IMG/2144.jpg">
+	<?php include("navbar.php");?>
 	<div id="cadastro">
 		<h1 id="fontes">Cadastro</h1>
 		<form name="cadastro" method="post" action="confirmar_cadastro.php">
@@ -38,6 +38,6 @@ if (isLoggedIn()) {
 		<p></p>
 		<p>Já possui conta? <a href="login.php">Entre</a><br><br></p>
 		</div>
-	<?php include("includes/footer.html");?>
+	<?php include("footer.html");?>
 </body>
 </html>

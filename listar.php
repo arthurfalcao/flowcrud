@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'config.php';
 session_start();
 if (isLoggedIn()) {
@@ -21,15 +21,15 @@ $stmt->execute();
  <head>
  	<meta charset="utf-8">
  	<title>Usuários - Flow</title>
- 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
- 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="./css/listar.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+ 	<link rel="stylesheet" type="text/css" href="./_INC/css/bootstrap.min.css">
+ 	<link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
+  <link rel="stylesheet" type="text/css" href="./_INC/css/listar.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
  </head>
- <body background="./img/2144.jpg">
- 	<?php include("includes/navbar.php");?>
+ <body background="./_IMG/2144.jpg">
+ 	<?php include("navbar.php");?>
     <?php if ($total > 0): ?>
-    <div id="list" class="row"> 
+    <div id="list" class="row">
         <div class="table-responsive col-md-12">
             <table class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead id="tabela">
@@ -59,10 +59,10 @@ $stmt->execute();
                 </tbody>
             </table>
             <?php else: ?>
-                <p id="else">Nenhum usuário registrado</p> 
+                <p id="else">Nenhum usuário registrado</p>
     <?php endif; ?>
         </div>
     </div>
- <?php include("includes/footer.html");?>
+ <?php include("footer.html");?>
  </body>
  </html>

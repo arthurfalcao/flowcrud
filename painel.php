@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require 'check.php';
 ?>
@@ -8,18 +8,18 @@ require 'check.php';
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $_SESSION['user_name']; ?> - Perfil - Flow</title>
-	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="./_INC/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body background="./img/2144.jpg">
-	<?php include("includes/navbar.php");?>
+<body background="./_IMG/2144.jpg">
+	<?php include("navbar.php");?>
 	<dir class="perfil">
 		<div class="container-fluid well span6">
 			<div class="row-fluid">
 	        	<div class="span2" >
-			    	<img src="img/user2.png" class="img-circle">
+			    	<img src="_IMG/user2.png" class="img-circle">
 	        	</div>
 	        	<div class="span8">
 	            	<h3><?php echo $_SESSION['user_name']; ?></h3>
@@ -30,7 +30,7 @@ require 'check.php';
 	        	<div class="span2">
 	            	<div class="btn-group">
 	                	<a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-	                    	Opções 
+	                    	Opções
 	                    	<span class="icon-cog icon-white"></span><span class="caret"></span>
 	                	</a>
 	                	<ul class="dropdown-menu">
@@ -42,6 +42,6 @@ require 'check.php';
 			</div>
 		</div>
 	</dir>
-	<?php include("includes/footer.html");?>
+	<?php include("footer.html");?>
 </body>
 </html>

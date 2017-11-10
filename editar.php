@@ -1,9 +1,9 @@
-<?php 
+<?php
 require_once 'config.php';
 session_start();
 if (isLoggedIn()) {
     $id = $_SESSION['user_id'];
-    $nome = $_SESSION['user_name'];    
+    $nome = $_SESSION['user_name'];
 }else{
     $id = isset($_GET['id']) ? (int) $_GET['id'] : null;
 }
@@ -27,13 +27,13 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="utf-8">
     <title>Editar - Flow</title>
-    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/editar.css">
+    <link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="./_INC/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./_INC/css/editar.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
-<body background="./img/2144.jpg">
-    <?php include("includes/navbar.php");?>
+<body background="./_IMG/2144.jpg">
+    <?php include("navbar.php");?>
     <div id="editar">
     <h1 id="fontes">Editar</h1>
         <form class="cadastro" action="confirmar_editar.php" method="post">
@@ -56,6 +56,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             <button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Alterar</button>
         </form>
     </div>
-    <?php include("includes/footer.html");?>
+    <?php include("footer.html");?>
 </body>
 </html>

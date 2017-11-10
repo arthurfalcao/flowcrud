@@ -11,13 +11,13 @@ if (isLoggedIn()) {
 <head>
 	<meta charset="utf-8">
 	<title>Login - Flow</title>
-	<link rel="stylesheet" type="text/css" href="css/login2.css">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="./_INC/css/login2.css">
+	<link rel="stylesheet" type="text/css" href="./_INC/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
-<body background="./img/2144.jpg">
-	<?php include("includes/navbar.php");?>
+<body background="./_IMG/2144.jpg">
+	<?php include("navbar.php");?>
 	<div id="login">
 		<h1 id="fontes">Login</h1>
 		<form name="login" action="confirmar_login.php" method="post">
@@ -30,6 +30,6 @@ if (isLoggedIn()) {
 		<p></p>
 		<p>Não possui conta? <a href="cadastro.php">Cadastre-se</a></p>
 	</div>
-	<?php include("includes/footer.html");?>
+	<?php include("footer.html");?>
 </body>
 </html>
