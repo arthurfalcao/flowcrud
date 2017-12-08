@@ -35,7 +35,6 @@ if (isLoggedIn()) {
 			<br>
 			<button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Cadastrar</button>
 		</form>
-		<p></p>
 		<p>Já possui conta? <a href="login.php">Entre</a><br><br></p>
 		</div>
 	<?php include("footer.html");?>

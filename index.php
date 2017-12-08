@@ -12,7 +12,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
-<body background="./_IMG/2144.jpg">
+<body>
     <?php include("navbar.php");?>
     <div class="jumbotron">
         <?php if (isLoggedIn()): ?>

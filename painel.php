@@ -10,8 +10,6 @@ require 'check.php';
 	<title><?php echo $_SESSION['user_name']; ?> - Perfil - Flow</title>
 	<link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="./_INC/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body background="./_IMG/2144.jpg">
 	<?php include("navbar.php");?>
@@ -43,5 +41,8 @@ require 'check.php';
 		</div>
 	</dir>
 	<?php include("footer.html");?>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,13 +1,7 @@
-.footer{
-	clear: both;
-    border-top: 1px solid #606060;
-    background: #ecf0f1;
-    color: #666;
-    text-align: center;
-    padding: 1em;
-    position:absolute;
-    bottom:0;
-    width:100%;
+body{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("../../_IMG/bg-pag.jpg");
 }
 
 .jumbotron{
@@ -19,11 +13,6 @@
 
 .span6{
     text-align: center;
-}
-
-body{
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .perfil{
@@ -59,4 +48,23 @@ p#else{
     font-size: 50px;
     color: #337ab7;
     text-align: center;
+}
+
+/* LOGIN */
+div#login{
+	text-align: center;
+	margin-right: 40%;
+	margin-left: 40%;
+}
+
+/* FOOTER */
+footer{
+	clear: both;
+  background-color: #ecf0f1;
+  color: #666;
+  text-align: center;
+  padding: 1em;
+  position:absolute;
+  bottom:0;
+  width:100%;
 }
