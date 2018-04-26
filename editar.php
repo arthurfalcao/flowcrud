@@ -27,12 +27,12 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="utf-8">
     <title>Editar - Flow</title>
-    <link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="./_INC/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./_INC/css/editar.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/editar.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
-<body background="./_IMG/2144.jpg">
+<body background="./assets/img/2144.jpg">
     <?php include("navbar.php");?>
     <div id="editar">
     <h1 id="fontes">Editar</h1>

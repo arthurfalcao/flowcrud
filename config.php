@@ -2,8 +2,8 @@
 
 $host = "localhost";
 $db_name = "id3384319_db_crud";
-$username = "id3384319_arthurfalcao";
-$password = "flow123";
+$username = "root";
+$password = "";
 
 try {
 	$conexao = new PDO("mysql:host={$host}; dbname={$db_name}", $username, $password);

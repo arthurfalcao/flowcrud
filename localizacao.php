@@ -27,7 +27,7 @@
       var arthur = {
         info: '<strong>Arthur Falcão</strong><br>\
         <a href="https://goo.gl/maps/oWQ1TKUzeB22">Flow</a>',
-        icon: '../_IMG/arthur.png',
+        icon: '../img/arthur.png',
         lat: -9.5962818,
         long: -35.7553214
       };
@@ -35,7 +35,7 @@
       var franklin = {
         info: '<strong>Franklin Soares</strong><br>\
         <a href="https://goo.gl/maps/xrdKW3985qT2">Flow</a>',
-        icon: '../_IMG/franklin.png',
+        icon: '../img/franklin.png',
         lat: -9.5559048,
         long: -35.7662475
       };
@@ -43,7 +43,7 @@
       var joab = {
         info: '<strong>Joab Leite</strong><br>\r\
         <a href="https://goo.gl/maps/QFYhF7Dcg5E2">Flow</a>',
-        icon: '../_IMG/joab.png',
+        icon: '../img/joab.png',
         lat: -9.6465873,
         long: -35.7082588
       };
@@ -51,7 +51,7 @@
       var rodrigo = {
         info: '<strong>Rodrigo Camelo</strong><br>\r\
         <a href="https://goo.gl/maps/QYGsFy8rBf22">Flow</a>',
-        icon: '../_IMG/rodrigo.png',
+        icon: '../img/rodrigo.png',
         lat: -9.6675037,
         long: -35.7137846
       };

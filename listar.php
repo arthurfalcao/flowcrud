@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+include 'grvusuario.php';
 session_start();
 if (isLoggedIn()) {
     isLoggedOut();
@@ -7,13 +8,10 @@ if (isLoggedIn()) {
 }
 
 $SQL_total = "SELECT COUNT(*) AS TOTAL FROM T_USUARIO ORDER BY id ASC";
-$SQL = "SELECT id, nome, email, cidade, uf FROM T_USUARIO ORDER BY id ASC";
 $stmt_total = $conexao->prepare($SQL_total);
 $stmt_total->execute();
 $total = $stmt_total->fetchColumn();
 
-$stmt = $conexao->prepare($SQL);
-$stmt->execute();
  ?>
 
  <!DOCTYPE html>
@@ -21,12 +19,12 @@ $stmt->execute();
  <head>
  	<meta charset="utf-8">
  	<title>Usuários - Flow</title>
- 	<link rel="stylesheet" type="text/css" href="./_INC/css/bootstrap.min.css">
- 	<link rel="stylesheet" type="text/css" href="./_INC/css/estilo.css">
-  <link rel="stylesheet" type="text/css" href="./_INC/css/listar.css">
+ 	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+ 	<link rel="stylesheet" type="text/css" href="./assets/css/estilo.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/listar.css">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
  </head>
- <body background="./_IMG/2144.jpg">
+ <body background="./assets/img/2144.jpg">
  	<?php include("navbar.php");?>
     <?php if ($total > 0): ?>
     <div id="list" class="row">
@@ -43,19 +41,22 @@ $stmt->execute();
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($user = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+                    <?php
+                      $usuarios = listaUsuarios($conexao);
+                      foreach ($usuarios as $usuario):
+                    ?>
                     <tr>
-                        <td><?php echo $user['id'] ?></td>
-                        <td><?php echo $user['nome'] ?></td>
-                        <td><?php echo $user['email'] ?></td>
-                        <td><?php echo $user['cidade'] ?></td>
-                        <td style='text-transform:uppercase'><?php echo $user['uf'] ?></td>
+                        <td><?= $usuario['id'] ?></td>
+                        <td><?= $usuario['nome'] ?></td>
+                        <td><?= $usuario['email'] ?></td>
+                        <td><?= $usuario['cidade'] ?></td>
+                        <td style='text-transform:uppercase'><?= $usuario['uf'] ?></td>
                         <td class="actions">
-                            <a class="btn btn-warning btn-xs" href="editar.php?id=<?php echo $user['id'] ?>">Editar</a>
-                            <a class="btn btn-danger btn-xs"  href="deletar.php?id=<?php echo $user['id'] ?>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                            <a class="btn btn-warning btn-xs" href="editar.php?id=<?= $usuario['id'] ?>">Editar</a>
+                            <a class="btn btn-danger btn-xs"  href="deletar.php?id=<?= $usuario['id'] ?>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                         </td>
                     </tr>
-                    <?php endwhile; ?>
+                  <?php endforeach; ?>
                 </tbody>
             </table>
             <?php else: ?>
