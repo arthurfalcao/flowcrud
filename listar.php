@@ -25,7 +25,11 @@ $total = $stmt_total->fetchColumn();
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
  </head>
  <body background="./assets/img/2144.jpg">
- 	<?php include("navbar.php");?>
+ 	<?php include("navbar.php");
+        if (array_key_exists("removido", $_GET) && $_GET["removido"] == "true"):
+  ?>
+            <p class="alert-success text-center">Usuário apagado com sucesso.</p>
+  <?php endif ?>
     <?php if ($total > 0): ?>
     <div id="list" class="row">
         <div class="table-responsive col-md-12">
@@ -46,14 +50,17 @@ $total = $stmt_total->fetchColumn();
                       foreach ($usuarios as $usuario):
                     ?>
                     <tr>
-                        <td><?= $usuario['id'] ?></td>
-                        <td><?= $usuario['nome'] ?></td>
-                        <td><?= $usuario['email'] ?></td>
-                        <td><?= $usuario['cidade'] ?></td>
-                        <td style='text-transform:uppercase'><?= $usuario['uf'] ?></td>
+                        <td><?=$usuario['id']?></td>
+                        <td><?=$usuario['nome']?></td>
+                        <td><?=$usuario['email']?></td>
+                        <td><?=$usuario['cidade']?></td>
+                        <td style='text-transform:uppercase'><?=$usuario['uf']?></td>
                         <td class="actions">
-                            <a class="btn btn-warning btn-xs" href="editar.php?id=<?= $usuario['id'] ?>">Editar</a>
-                            <a class="btn btn-danger btn-xs"  href="deletar.php?id=<?= $usuario['id'] ?>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                            <a class="btn btn-warning btn-xs" href="editar.php?id=<?=$usuario['id']?>">Editar</a>
+                            <form class="col-lg-3" action="deletar.php" method="post">
+                              <input type="hidden" name="id" value="<?=$usuario['id']?>">
+                              <button class="btn btn-danger btn-xs">Excluir</button>
+                            </form>
                         </td>
                     </tr>
                   <?php endforeach; ?>
