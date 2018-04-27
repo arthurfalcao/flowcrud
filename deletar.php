@@ -1,28 +1,23 @@
-<?php 
-require_once 'config.php';
-session_start();
+<?php
+	require_once 'config.php';
+	include 'grvusuario.php';
+	session_start();
 
-if (isLoggedIn()) {
-	$id = $_SESSION['user_id'];	
-}else{
-	$id = isset($_GET['id']) ? (int) $_GET['id'] : null;
-}
+	if (isLoggedIn()) {
+		$id = $_SESSION['user_id'];
+	}else{
+		$id = isset($_GET['id']) ? (int) $_GET['id'] : null;
+	}
 
-if (empty($id)){
-	echo "ID não encontrado";
-	exit;
-}
+	if (empty($id)) {
+		echo "ID não encontrado";
+		exit;
+	}
 
-$SQL = "DELETE FROM T_USUARIO WHERE id = ?";
-$stmt = $conexao->prepare($SQL);
-$stmt->bindParam(1, $id);
+	removeUsuario($conexao, $id);
 
-if ($stmt->execute()){
-    header('Location: index.php');
-    require_once 'logout.php';
-}else{
-    echo "Erro ao remover";
-    print_r($stmt->errorInfo());
-}
+	header('Location: listar.php?removido=true');
+	die();
+	require_once 'logout.php';
 
  ?>
