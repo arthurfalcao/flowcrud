@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'config.php';
 session_start();
 
@@ -10,28 +10,20 @@ $uf = isset($_POST['uf']) ? $_POST['uf'] : null;
 
 if (isLoggedIn()) {
 	$id = $_SESSION['user_id'];
-}else{
+} else {
 	$id = isset($_POST['id']) ? $_POST['id'] : null;
 }
-	
-$SQL = "UPDATE T_USUARIO SET nome = ?, senha = ?, cidade = ?, uf = ? WHERE id = ?";
-$stmt = $conexao->prepare($SQL);
-$stmt->bindParam(1, $nome);
-$stmt->bindParam(2, $senha);
-$stmt->bindParam(3, $cidade);
-$stmt->bindParam(4, $uf);
-$stmt->bindParam(5, $id);
 
-if($stmt->execute()){
+if(altertUser($conexao, $id, $nome, $email, $senha, $cidade, $uf)) {
 	if (isLoggedIn()) {
 		$_SESSION['user_name'] = $nome;
 		$_SESSION['user_cidade'] = $cidade;
 		$_SESSION['user_uf'] = $uf;
-		header('Location: painel.php');	
-	}else{
+		header('Location: painel.php');
+	} else {
 		header('Location: listar.php');
 	}
-}else{
+} else {
 	echo "Erro ao alterar";
 	print_r($stmt->errorInfo());
 }
