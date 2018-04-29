@@ -24,6 +24,25 @@ function insertUser($conexao, $nome, $email, $senha, $cidade, $uf) {
   return $stmt->execute();
 }
 
+function alterUser($conexao, $id, $nome, $email, $senha, $cidade, $uf) {
+  $query = "UPDATE T_USUARIO SET nome = ?, senha = ?, cidade = ?, uf = ? WHERE id = ?";
+  $stmt = $conexao->prepare($query);
+  $stmt->bindParam(1, $nome);
+  $stmt->bindParam(2, $senha);
+  $stmt->bindParam(3, $cidade);
+  $stmt->bindParam(4, $uf);
+  $stmt->bindParam(5, $id);
+  return $stmt-execute();
+}
+
+function searchUser($conexao, $id) {
+  $query = "SELECT * FROM T_USUARIO WHERE id = ?";
+  $stmt = $conexao->prepare($query);
+  $stmt->bindParam(1, $id);
+  $stmt->execute();
+  return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 function removeUsuario($conexao, $id) {
   $query = "DELETE FROM T_USUARIO WHERE id = ?";
   $stmt = $conexao->prepare($query);
