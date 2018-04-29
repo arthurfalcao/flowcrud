@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+include 'grvusuario.php';
 session_start();
 if (isLoggedIn()) {
     $id = $_SESSION['user_id'];
@@ -12,14 +13,7 @@ if (empty($id)){
 	exit;
 }
 
-$SQL = "SELECT id, nome, email, senha, cidade, uf FROM T_USUARIO WHERE id = ?";
-$stmt = $conexao->prepare($SQL);
-$stmt->bindParam(1, $id);
-
-$stmt->execute();
-
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+$user = searchUser($conexao, $id);
  ?>
 
 <!DOCTYPE html>
@@ -37,21 +31,17 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <div id="editar">
     <h1 id="fontes">Editar</h1>
         <form class="cadastro" action="confirmar_editar.php" method="post">
-            <?php if (isLoggedIn()): ?>
-                <input type="hidden" name="id">
-            <?php else: ?>
-                <input type="hidden" name="id" value="<?php echo $id ?>">
-            <?php endif; ?>
+            <input type="hidden" name="id" value="<?=$user['id']?>">
             <label for="inputNome" class="sr-only">Nome</label><br>
-            <input type="nome" name="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+            <input type="nome" name="nome" id="inputNome" class="form-control" value="<?=$user['nome']?>" placeholder="Nome" required autofocus>
             <label for="inputEmail" class="sr-only">Email</label><br>
-            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
+            <input type="email" name="email" id="inputEmail" class="form-control" value="<?=$user['email']?>" placeholder="Email" required>
             <label for="inputSenha" class="sr-only">Senha</label><br>
             <input type="password" name="senha" id="inputSenha" class="form-control" placeholder="Senha" required>
             <label for="inputCidade" class="sr-only">Cidade</label><br>
-            <input type="text" name="cidade" id="inputCidade" class="form-control" placeholder="Cidade" required>
+            <input type="text" name="cidade" id="inputCidade" class="form-control" value="<?=$user['cidade']?>" placeholder="Cidade" required>
             <label for="inputUF" class="sr-only">UF</label><br>
-            <input type="text" name="uf" id="inputUF" class="form-control" placeholder="UF" maxlength="2" size="2" style='text-transform:uppercase' required>
+            <input type="text" name="uf" id="inputUF" class="form-control" value="<?=$user['uf']?>" placeholder="UF" maxlength="2" size="2" style='text-transform:uppercase' required>
             <br>
             <button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Alterar</button>
         </form>
