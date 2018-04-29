@@ -5,7 +5,7 @@
 
 	if (isLoggedIn()) {
 		$id = $_SESSION['user_id'];
-	}else{
+	} else {
 		$id = isset($_GET['id']) ? (int) $_GET['id'] : null;
 	}
 
@@ -16,8 +16,9 @@
 
 	removeUsuario($conexao, $id);
 
+	$_SESSION['logged_in'] = false;
+	session_destroy();
 	header('Location: listar.php?removido=true');
 	die();
-	require_once 'logout.php';
 
  ?>
