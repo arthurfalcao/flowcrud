@@ -1,6 +1,5 @@
 <?php
 require_once "config.php";
-session_start();
 if (isLoggedIn()) {
 	header('Location: painel.php');
 }
@@ -16,6 +15,10 @@ if (isLoggedIn()) {
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
+	<?php
+		include 'logica-usuario.php';
+		include 'mostra-alerta.php';
+	?>
 	<?php include("navbar.php");?>
 	<div id="login">
 		<h1 id="fontes">Login</h1>
@@ -24,6 +27,12 @@ if (isLoggedIn()) {
 			<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
 			<label for="inputSenha" class="sr-only">Senha</label><br>
 			<input type="password" name="senha" id="inputSenha" class="form-control" placeholder="Senha" required><br>
+
+			<?php
+				showAlert("success");
+				showAlert("danger");
+			?>
+
 			<button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Entrar</button>
 		</form>
 		<p>Não possui conta? <a href="cadastro.php">Cadastre-se</a></p>

@@ -1,10 +1,6 @@
-<?php 
-session_start();
+<?php include 'logica-usuario.php';
 
-$_SESSION['logged_in'] = false;
-
-session_destroy();
-
+logout();
+$_SESSION["success"] = "Deslogado com sucesso.";
 header('Location: index.php');
-
- ?>
+die();

@@ -1,5 +1,19 @@
-<?php 
+<?php
 include 'config.php';
+include 'banco-usuario.php';
+include 'logica-usuario.php';
+
+$usuario = buscaUsuario($conexao, $_POST["email"], $_POST["senha"]);
+if ($usuario == null) {
+	$_SESSION["danger"] = "Usuário ou senha inválida.";
+	header("Location: login.php");
+} else {
+	$_SESSION["success"] = "Usuário logado com sucesso.";
+	loginUser($usuario["email"]);
+	header("Location: login.php");
+}
+die();
+
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $senha = isset($_POST['senha']) ? md5($_POST['senha']) : '';
 
@@ -32,6 +46,6 @@ $_SESSION['user_cidade'] = $user['cidade'];
 $_SESSION['user_uf'] = $user['uf'];
 
 echo "<script>alert('Usuário logado com sucesso');</script>";
-echo "<script language=\"javascript\">window.location=\"index.php\";</script>";
+echo "<script language=\"javascript\">window.location=\"login.php\";</script>";
 
  ?>

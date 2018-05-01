@@ -1,12 +1,7 @@
 <?php
 require_once 'config.php';
 include 'grvusuario.php';
-session_start();
-if (isLoggedIn()) {
-    isLoggedOut();
-    header('Location: listar.php');
-}
-
+include 'logica-usuario.php';
 $SQL_total = "SELECT COUNT(*) AS TOTAL FROM T_USUARIO ORDER BY id ASC";
 $stmt_total = $conexao->prepare($SQL_total);
 $stmt_total->execute();
@@ -25,11 +20,12 @@ $total = $stmt_total->fetchColumn();
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
  </head>
  <body background="./assets/img/2144.jpg">
- 	<?php include("navbar.php");
-        if (array_key_exists("removido", $_GET) && $_GET["removido"] == "true"):
+ 	<?php
+    include("navbar.php");
+    include 'mostra-alerta.php';
+
+    showAlert("success");
   ?>
-            <p class="alert-success text-center">Usuário apagado com sucesso.</p>
-  <?php endif ?>
     <?php if ($total > 0): ?>
     <div id="list" class="row">
         <div class="table-responsive col-md-12">

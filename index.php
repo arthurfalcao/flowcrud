@@ -1,8 +1,3 @@
-<?php
-require 'config.php';
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +8,17 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
+    <?php
+      include 'logica-usuario.php';
+      include 'mostra-alerta.php';
+    ?>
     <?php include("navbar.php");?>
     <div class="jumbotron">
-        <?php if (isLoggedIn()): ?>
-            <h2 id="fontes">Olá, <?php echo $_SESSION['user_name']; ?>!</a></h2><br>
+      <?php
+        showAlert("success");
+      ?>
+        <?php if (userIsLogged()): ?>
+            <h2 id="fontes">Olá, <?php echo $_SESSION['usuario_logado']; ?>!</a></h2><br>
             <p>
                 <a class="btn btn-primary btn-lg" href="painel.php" role="button">Perfil</a>
                 <a class="btn btn-primary btn-lg" href="logout.php" role="button">Sair</a>

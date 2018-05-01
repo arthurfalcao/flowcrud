@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-session_start();
+include 'logica-usuario.php';
 if (isLoggedIn()) {
 	header('Location: painel.php');
 }
