@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-include 'grvusuario.php';
+require_once 'grvusuario.php';
 session_start();
 if (isLoggedIn()) {
     $id = $_SESSION['user_id'];
@@ -27,7 +27,7 @@ $user = searchUser($conexao, $id);
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body background="./assets/img/2144.jpg">
-    <?php include("navbar.php");?>
+    <?php require_once("navbar.php");?>
     <div id="editar">
     <h1 id="fontes">Editar</h1>
         <form class="cadastro" action="confirmar_editar.php" method="post">
@@ -46,6 +46,6 @@ $user = searchUser($conexao, $id);
             <button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Alterar</button>
         </form>
     </div>
-    <?php include("footer.html");?>
+    <?php require_once("footer.html");?>
 </body>
 </html>

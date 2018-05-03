@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-include 'grvusuario.php';
+require_once 'grvusuario.php';
 
 $nome = $_POST['nome'];
 $email = $_POST['email'];

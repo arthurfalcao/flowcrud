@@ -9,10 +9,10 @@
 </head>
 <body>
     <?php
-      include 'logica-usuario.php';
-      include 'mostra-alerta.php';
+      require_once 'logica-usuario.php';
+      require_once 'mostra-alerta.php';
     ?>
-    <?php include("navbar.php");?>
+    <?php require_once("navbar.php");?>
     <div class="jumbotron">
       <?php
         showAlert("success");
@@ -31,6 +31,6 @@
             </p>
         <?php endif; ?>
     </div>
-    <?php include("footer.html");?>
+    <?php require_once("footer.html");?>
     </body>
 </html>

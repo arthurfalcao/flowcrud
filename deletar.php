@@ -1,7 +1,7 @@
 <?php
 	require_once 'config.php';
-	include 'grvusuario.php';
-	include 'logica-usuario.php';
+	require_once 'grvusuario.php';
+	require_once 'logica-usuario.php';
 
 	$id = $_POST["id"];
 

@@ -1,18 +1,18 @@
 <?php
 session_start();
-require 'check.php';
+require_once 'check.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $_SESSION['user_name']; ?> - Perfil - Flow</title>
+	<title><?=$_SESSION['user_name']; ?> - Perfil - Flow</title>
 	<link rel="stylesheet" type="text/css" href="./assets/css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
 </head>
 <body background="./assets/img/2144.jpg">
-	<?php include("navbar.php");?>
+	<?php require_once("navbar.php");?>
 	<dir class="perfil">
 		<div class="container-fluid well span6">
 			<div class="row-fluid">
@@ -20,10 +20,10 @@ require 'check.php';
 			    	<img src="assets/img/user2.png" class="img-circle">
 	        	</div>
 	        	<div class="span8">
-	            	<h3><?php echo $_SESSION['user_name']; ?></h3>
-	            	<h6>Email: <?php echo $_SESSION['user_email']; ?></h6>
-	            	<h6>Cidade: <?php echo $_SESSION['user_cidade']; ?></h6>
-	            	<h6>UF: <?php echo $_SESSION['user_uf']; ?></h6>
+	            	<h3><?=$_SESSION['user_name']; ?></h3>
+	            	<h6>Email: <?=$_SESSION['user_email']; ?></h6>
+	            	<h6>Cidade: <?=$_SESSION['user_cidade']; ?></h6>
+	            	<h6>UF: <?=$_SESSION['user_uf']; ?></h6>
 	        	</div>
 	        	<div class="span2">
 	            	<div class="btn-group">
@@ -40,7 +40,7 @@ require 'check.php';
 			</div>
 		</div>
 	</dir>
-	<?php include("footer.html");?>
+	<?php require_once("footer.html");?>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

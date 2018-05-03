@@ -12,4 +12,9 @@ p#else{
     font-size: 40px;
     color: #337ab7;
     text-align: center;
-}    
+}
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}

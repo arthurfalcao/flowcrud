@@ -16,10 +16,10 @@ if (isLoggedIn()) {
 </head>
 <body>
 	<?php
-		include 'logica-usuario.php';
-		include 'mostra-alerta.php';
+		require_once 'logica-usuario.php';
+		require_once 'mostra-alerta.php';
 	?>
-	<?php include("navbar.php");?>
+	<?php require_once("navbar.php");?>
 	<div id="login">
 		<h1 id="fontes">Login</h1>
 		<form name="login" action="confirmar_login.php" method="post">
@@ -37,6 +37,6 @@ if (isLoggedIn()) {
 		</form>
 		<p>Não possui conta? <a href="cadastro.php">Cadastre-se</a></p>
 	</div>
-	<?php include("footer.html");?>
+	<?php require_once("footer.html");?>
 </body>
 </html>
