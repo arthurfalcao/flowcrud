@@ -21,13 +21,12 @@ $user = searchUser($conexao, $id);
 <head>
     <meta charset="utf-8">
     <title>Editar - Flow</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/editar.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flowcrud.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body background="./assets/img/2144.jpg">
-    <?php require_once("navbar.php");?>
+    <?php require_once __DIR__ . "/_includes/navbar.php" ?>
     <div id="editar">
     <h1 id="fontes">Editar</h1>
         <form class="cadastro" action="confirmar_editar.php" method="post">
@@ -46,6 +45,6 @@ $user = searchUser($conexao, $id);
             <button class="btn btn-lg btn-primary btn-block" type="submit" class="bt">Alterar</button>
         </form>
     </div>
-    <?php require_once("footer.html");?>
+    <?php require_once __DIR__ . "/_includes/footer.php" ?>
 </body>
 </html>

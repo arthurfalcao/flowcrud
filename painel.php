@@ -8,11 +8,11 @@ require_once 'check.php';
 <head>
 	<meta charset="utf-8">
 	<title><?=$_SESSION['user_name']; ?> - Perfil - Flow</title>
-	<link rel="stylesheet" type="text/css" href="./assets/css/estilo.css">
-	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flowcrud.css">
 </head>
 <body background="./assets/img/2144.jpg">
-	<?php require_once("navbar.php");?>
+	<?php require_once __DIR__ . "/_includes/navbar.php" ?>
 	<dir class="perfil">
 		<div class="container-fluid well span6">
 			<div class="row-fluid">
@@ -40,7 +40,7 @@ require_once 'check.php';
 			</div>
 		</div>
 	</dir>
-	<?php require_once("footer.html");?>
+	<?php require_once __DIR__ . "/_includes/footer.php" ?>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

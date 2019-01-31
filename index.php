@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flow</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/estilo.css">
+
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flowcrud.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
     <?php
-      require_once 'logica-usuario.php';
-      require_once 'mostra-alerta.php';
+        require_once 'logica-usuario.php';
+        require_once 'mostra-alerta.php';
     ?>
-    <?php require_once("navbar.php");?>
+    <?php require_once __DIR__ . "/_includes/navbar.php" ?>
     <div class="jumbotron">
-      <?php
-        showAlert("success");
-      ?>
+        <?php showAlert("success") ?>
         <?php if (userIsLogged()): ?>
             <h2 id="fontes">Olá, <?php echo $_SESSION['usuario_logado']; ?>!</a></h2><br>
             <p>
@@ -31,6 +32,6 @@
             </p>
         <?php endif; ?>
     </div>
-    <?php require_once("footer.html");?>
-    </body>
+    <?php require_once __DIR__ . "/_includes/footer.php" ?>
+</body>
 </html>

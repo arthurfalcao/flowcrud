@@ -10,8 +10,8 @@ if (isLoggedIn()) {
 <head>
 	<meta charset="utf-8">
 	<title>Login - Flow</title>
-	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./assets/css/estilo.css">
+	<link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flowcrud.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +19,7 @@ if (isLoggedIn()) {
 		require_once 'logica-usuario.php';
 		require_once 'mostra-alerta.php';
 	?>
-	<?php require_once("navbar.php");?>
+	<?php require_once __DIR__ . "/_includes/navbar.php" ?>
 	<div id="login">
 		<h1 id="fontes">Login</h1>
 		<form name="login" action="confirmar_login.php" method="post">
@@ -37,6 +37,6 @@ if (isLoggedIn()) {
 		</form>
 		<p>Não possui conta? <a href="cadastro.php">Cadastre-se</a></p>
 	</div>
-	<?php require_once("footer.html");?>
+	<?php require_once __DIR__ . "/_includes/footer.php" ?>
 </body>
 </html>
