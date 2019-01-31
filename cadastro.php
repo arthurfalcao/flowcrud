@@ -24,8 +24,9 @@ require_once 'logica-usuario.php';
 
 	<div id="cadastro">
 		<h1 id="fontes">Cadastro</h1>
-		<form name="cadastro" method="post" action="confirmar_cadastro.php">
-			<input type="hidden" name="id">
+		<form name="cadastro" method="post" action="app/actions.php">
+			<input type="hidden" name="model" value="User">
+			<input type="hidden" name="action" value="add">
 			<label for="inputNome" class="sr-only">Nome</label><br>
 			<input type="nome" name="name" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
 			<label for="inputEmail" class="sr-only">Email</label><br>

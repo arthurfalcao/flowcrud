@@ -13,6 +13,6 @@ class UserController {
             ->setPassword($user['password']);
 
         $dao = new UserDao(Connection::getConnection());
-        $dao->add($user);
+        return $dao->add($user);
     }
 }
