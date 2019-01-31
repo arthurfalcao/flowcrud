@@ -11,7 +11,7 @@ require_once 'check.php';
 	<link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/flowcrud.css">
 </head>
-<body background="./assets/img/2144.jpg">
+<body>
 	<?php require_once __DIR__ . "/_includes/navbar.php" ?>
 	<dir class="perfil">
 		<div class="container-fluid well span6">

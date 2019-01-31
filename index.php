@@ -16,6 +16,7 @@
         require_once 'mostra-alerta.php';
     ?>
     <?php require_once __DIR__ . "/_includes/navbar.php" ?>
+
     <div class="jumbotron">
         <?php showAlert("success") ?>
         <?php if (userIsLogged()): ?>
@@ -32,6 +33,7 @@
             </p>
         <?php endif; ?>
     </div>
+    
     <?php require_once __DIR__ . "/_includes/footer.php" ?>
 </body>
 </html>

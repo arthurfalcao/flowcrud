@@ -25,7 +25,7 @@ $user = searchUser($conexao, $id);
     <link rel="stylesheet" href="assets/css/flowcrud.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
-<body background="./assets/img/2144.jpg">
+<body>
     <?php require_once __DIR__ . "/_includes/navbar.php" ?>
     <div id="editar">
     <h1 id="fontes">Editar</h1>
