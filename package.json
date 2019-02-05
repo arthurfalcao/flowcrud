@@ -1,0 +1,15 @@
+{
+  "name": "flowcrud",
+  "version": "1.0.0",
+  "main": "index.php",
+  "repository": "git@github.com:arthurfalcao/FlowCRUD.git",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "author": "Arthur Falcão <arthurfalcao77@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-imagemin": "^5.0.3"
+  }
+}
