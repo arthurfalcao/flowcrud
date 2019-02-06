@@ -2,7 +2,7 @@
   "name": "flowcrud",
   "version": "1.0.0",
   "main": "index.php",
-  "repository": "git@github.com:arthurfalcao/FlowCRUD.git",
+  "repository": "git@github.com:arthurfalcao/flowcrud.git",
   "scripts": {
     "gulp": "gulp",
     "sass": "sass --watch assets/css/flowcrud.scss:assets/css/flowcrud.css"
