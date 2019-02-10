@@ -1,9 +1,12 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\App;
+
 class ContactController {
     
     public function index() {
-
         
         $contacts = App::get('database')->selectAll('contacts');
 
