@@ -1,0 +1,261 @@
+@charset "UTF-8";
+body {
+  background-color: #eeeeee;
+  background-image: url("../img/bg-pag.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+label {
+  color: black;
+  font-family: Century Gothic, monospace;
+  position: absolute;
+  left: 550px;
+  margin-right: 5px;
+}
+
+tbody {
+  background-color: white;
+}
+
+form {
+  border: none;
+}
+
+footer {
+  clear: both;
+  background-color: #ecf0f1;
+  color: #666;
+  text-align: center;
+  padding: 1em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.imagem {
+  width: 20%;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.bt {
+  background-color: #1C1C1C;
+  color: #FFFFFF;
+  border: 0px;
+  width: 75px;
+  height: 25px;
+}
+
+#txt {
+  color: black;
+  font-family: Century Gothic, monospace;
+  text-align: center;
+  font-size: 17px;
+}
+
+.br {
+  position: absolute;
+  left: 640px;
+}
+
+div#cadastro {
+  text-align: center;
+  margin-right: 40%;
+  margin-left: 40%;
+}
+
+.imagem {
+  width: 150px;
+  height: 100px;
+  padding-top: 30px;
+}
+
+div#editar {
+  text-align: center;
+  margin-right: 40%;
+  margin-left: 40%;
+}
+
+.imagem {
+  width: 60%;
+  height: 60%;
+  padding-top: 30px;
+}
+
+.jumbotron {
+  text-align: center;
+  margin-right: 30%;
+  margin-left: 30%;
+  background-color: transparent;
+}
+
+.span6 {
+  text-align: center;
+}
+
+.perfil {
+  text-align: center;
+  margin-right: 30%;
+  margin-left: 30%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  padding: 0px;
+}
+
+#fontes {
+  font-family: "Lobster", cursive;
+  font-size: 90px;
+  color: #337ab7;
+}
+
+h2#fontes {
+  font-size: 70px;
+}
+
+#tabela {
+  font-family: "Lobster", cursive;
+  color: #337ab7;
+}
+
+p#else {
+  font-family: "Lobster", cursive;
+  font-size: 50px;
+  color: #337ab7;
+  text-align: center;
+}
+
+/* LOGIN */
+div#login {
+  text-align: center;
+  margin-right: 40%;
+  margin-left: 40%;
+}
+
+.footer {
+  clear: both;
+  border-top: 1px solid #606060;
+  background: #ecf0f1;
+  color: #666;
+  text-align: center;
+  padding: 1em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.span6 {
+  text-align: center;
+}
+
+.perfil {
+  text-align: center;
+  margin-right: 30%;
+  margin-left: 30%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  padding: 0px;
+}
+
+#fontes {
+  font-family: "Lobster", cursive;
+  font-size: 90px;
+  color: #337ab7;
+}
+
+h2#fontes {
+  font-size: 70px;
+}
+
+p#else {
+  font-family: "Lobster", cursive;
+  font-size: 40px;
+  color: #337ab7;
+  text-align: center;
+}
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+div#login {
+  text-align: center;
+  margin: 50px;
+}
+
+.imagem {
+  width: 10%;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  font-weight: 700;
+}
+
+#l1 {
+  color: black;
+  font-family: Century Gothic, monospace;
+}
+
+.bt {
+  background-color: #1C1C1C;
+  color: #FFFFFF;
+  border: 0px;
+  width: 75px;
+  height: 25px;
+}
+
+/*Botão*/
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+.btn {
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+}
+
+/* Copyright */
+
+/*# sourceMappingURL=flowcrud.css.map */

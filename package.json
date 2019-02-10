@@ -1,0 +1,17 @@
+{
+  "name": "flowcrud",
+  "version": "1.0.0",
+  "main": "index.php",
+  "repository": "git@github.com:arthurfalcao/flowcrud.git",
+  "scripts": {
+    "gulp": "gulp",
+    "sass": "sass --watch assets/css/flowcrud.scss:assets/css/flowcrud.css"
+  },
+  "author": "Arthur Falcão <arthurfalcao77@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-imagemin": "^5.0.3",
+    "sass": "^1.17.0"
+  }
+}

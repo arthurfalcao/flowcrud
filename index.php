@@ -1,36 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Flow</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/estilo.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-</head>
-<body>
-    <?php
-      require_once 'logica-usuario.php';
-      require_once 'mostra-alerta.php';
-    ?>
-    <?php require_once("navbar.php");?>
-    <div class="jumbotron">
-      <?php
-        showAlert("success");
-      ?>
-        <?php if (userIsLogged()): ?>
-            <h2 id="fontes">Olá, <?php echo $_SESSION['usuario_logado']; ?>!</a></h2><br>
-            <p>
-                <a class="btn btn-primary btn-lg" href="painel.php" role="button">Perfil</a>
-                <a class="btn btn-primary btn-lg" href="logout.php" role="button">Sair</a>
-            </p>
-        <?php else: ?>
-            <h2 id="fontes">Olá, visitante.</a></h2><br>
-            <p>
-                <a class="btn btn-primary btn-lg" href="login.php" role="button">Entre</a>
-                <a class="btn btn-primary btn-lg" href="cadastro.php" role="button">Cadastre-se</a>
-            </p>
-        <?php endif; ?>
-    </div>
-    <?php require_once("footer.html");?>
-    </body>
-</html>
+<?php
+
+
+require 'vendor/autoload.php';
+require 'core/bootstrap.php';
+
+use App\Core\{Router, Request};
+
+require Router::load('app/routes.php')
+    ->direct(Request::uri(), Request::method());

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Localização</title>
+
+	<style>
+		#map {
+			height: 100%;
+		}
+
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="map"></div>
+
+	<script>
+		function initMap() {
+			const arthur = {
+				info: '<strong>Arthur Falcão</strong><br>\<a href="https://goo.gl/maps/oWQ1TKUzeB22" target="_blank" rel="noopener">Flow</a>',
+				icon: '../assets/img/arthur.png',
+				lat: -9.5962818,
+				long: -35.7553214
+			};
+
+			const franklin = {
+				info: '<strong>Franklin Soares</strong><br>\<a href="https://goo.gl/maps/xrdKW3985qT2" target="_blank" rel="noopener">Flow</a>',
+				icon: '../assets/img/franklin.png',
+				lat: -9.5559048,
+				long: -35.7662475
+			};
+
+			const joab = {
+				info: '<strong>Joab Leite</strong><br>\r\<a href="https://goo.gl/maps/QFYhF7Dcg5E2" target="_blank" rel="noopener">Flow</a>',
+				icon: '../assets/img/joab.png',
+				lat: -9.6465873,
+				long: -35.7082588
+			};
+
+			const rodrigo = {
+				info: '<strong>Rodrigo Camelo</strong><br>\r\<a href="https://goo.gl/maps/QYGsFy8rBf22" target="_blank" rel="noopener">Flow</a>',
+				icon: '../assets/img/rodrigo.png',
+				lat: -9.6675037,
+				long: -35.7137846
+			};
+
+			let locations = [
+				arthur,
+				franklin,
+				joab,
+				rodrigo
+			];			
+
+			const map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 13,
+				center: new google.maps.LatLng(-9.5962818, -35.7553214),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			});
+
+			const infowindow = new google.maps.InfoWindow({});
+
+			locations.forEach(location => {
+				let marker = new google.maps.Marker({
+					position: new google.maps.LatLng(location.lat, location.long),
+					map: map,
+					icon: location.icon
+				});
+				
+				google.maps.event.addListener(marker, 'click', (marker => (
+					() => {
+						infowindow.setContent(location.info);
+						infowindow.open(map, marker);
+					}
+				))(marker));
+			})
+		}
+	</script>
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTFf7IKwhkK35SGEEYGiqigp-V3Ne86kY&callback=initMap"></script>
+</body>
+</html>
