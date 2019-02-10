@@ -1,17 +1,26 @@
 <?php
 
-require_once __DIR__ . "/../models/Contact.php";
-require_once __DIR__ . "/../dao/ContactDao.php";
-require_once __DIR__ . "/../services/Connection.php";
+namespace App\Controllers;
+
+use App\Core\App;
 
 class ContactController {
+    
+    public function index() {
+        
+        $contacts = App::get('database')->selectAll('contacts');
 
-    public function __construct() {}
+        return view('index', compact('contacts'));
+    }
 
-    public function add($contact) {
-        $contact = new Contact($contact['name'], $contact['email'], $contact['fone']);
+    public function store() {
 
-        $dao = new ContactDao(Connection::getConnection());
-        $dao->add($contact);
+        App::get('database')->insert('contacts', [
+            'name' => $_POST['name'],
+            'email' => 'arthur.falcao@zage.com.br',
+            'fone' => '12312889'
+        ]);
+
+        return redirect('');        
     }
 }
