@@ -26,28 +26,28 @@
 
 	<script>
 		function initMap() {
-			let arthur = {
+			const arthur = {
 				info: '<strong>Arthur Falcão</strong><br>\<a href="https://goo.gl/maps/oWQ1TKUzeB22" target="_blank" rel="noopener">Flow</a>',
 				icon: '../assets/img/arthur.png',
 				lat: -9.5962818,
 				long: -35.7553214
 			};
 
-			let franklin = {
+			const franklin = {
 				info: '<strong>Franklin Soares</strong><br>\<a href="https://goo.gl/maps/xrdKW3985qT2" target="_blank" rel="noopener">Flow</a>',
 				icon: '../assets/img/franklin.png',
 				lat: -9.5559048,
 				long: -35.7662475
 			};
 
-			let joab = {
+			const joab = {
 				info: '<strong>Joab Leite</strong><br>\r\<a href="https://goo.gl/maps/QFYhF7Dcg5E2" target="_blank" rel="noopener">Flow</a>',
 				icon: '../assets/img/joab.png',
 				lat: -9.6465873,
 				long: -35.7082588
 			};
 
-			let rodrigo = {
+			const rodrigo = {
 				info: '<strong>Rodrigo Camelo</strong><br>\r\<a href="https://goo.gl/maps/QYGsFy8rBf22" target="_blank" rel="noopener">Flow</a>',
 				icon: '../assets/img/rodrigo.png',
 				lat: -9.6675037,
@@ -61,13 +61,13 @@
 				rodrigo
 			];			
 
-			let map = new google.maps.Map(document.getElementById('map'), {
+			const map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 13,
 				center: new google.maps.LatLng(-9.5962818, -35.7553214),
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			});
 
-			let infowindow = new google.maps.InfoWindow({});
+			const infowindow = new google.maps.InfoWindow({});
 
 			locations.forEach(location => {
 				let marker = new google.maps.Marker({
@@ -76,12 +76,12 @@
 					icon: location.icon
 				});
 				
-				google.maps.event.addListener(marker, 'click', (function (marker) {
-					return function () {
+				google.maps.event.addListener(marker, 'click', (marker => (
+					() => {
 						infowindow.setContent(location.info);
 						infowindow.open(map, marker);
 					}
-				})(marker));
+				))(marker));
 			})
 		}
 	</script>
